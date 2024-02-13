@@ -1,11 +1,19 @@
+// @Author Haig-Alexander Dilanian
 package LabAssignment1;
 import java.util.Scanner; // Imported Scanner so that the application is able to take user input and run the desired method.
 
 public class LabAssignment1 {
+    // Instantiating the Scanner once, so that all the methods can use it.
+    private final Scanner sc;
+    
+    public LabAssignment1(){
+        sc = new Scanner(System.in);
+    }
     //Main menu of the application where you can choose what you want to do by entering a number from 1 to 4.
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
+        new LabAssignment1().perform();
+}
+    public void perform(){
         while (true) {
             System.out.println("Financial Calculator:");
             System.out.println("1) Loan Calculator");
@@ -25,8 +33,7 @@ public class LabAssignment1 {
         }
     }   
     //Loan Calculator
-    private static void loanCalculator() {
-        Scanner sc = new Scanner(System.in);
+    private void loanCalculator() {    
         System.out.print("Loan Amount: ");
         double loanAmount = sc.nextDouble();
         System.out.print("Annual Interest Rate: ");
@@ -39,8 +46,7 @@ public class LabAssignment1 {
         System.out.printf("\n Monthly Payment: $%.2f%n \n", monthlyPayment);
     }  
     // Future Savings Calculator
-    private static void futureSavingsCalculator() {
-        Scanner sc = new Scanner(System.in);
+    private void futureSavingsCalculator() {
         System.out.print("Amount Each Month: ");
         double amountPerMonth = sc.nextDouble();
         System.out.print("Annual Interest Rate: ");
@@ -54,8 +60,7 @@ public class LabAssignment1 {
         System.out.printf("\n Future Value Of Savings: $%.2f%n \n", futureValue);
     }
     // Savings Goal Calculator
-    private static void savingsGoalCalculator() {
-        Scanner sc = new Scanner(System.in);
+    private void savingsGoalCalculator() {
         System.out.print("Target Amount Desired: ");
         double targetAmount = sc.nextDouble();
         System.out.print("Annual Interest Rate Expected: ");
